@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 
 class ResultList extends Component {
   render() {
+    console.log(this.props.books)
     return (
       <section>
       <h2>TITLE</h2>
