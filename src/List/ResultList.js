@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 
+
 class ResultList extends Component {
   render() {
     return (
@@ -15,3 +16,8 @@ class ResultList extends Component {
 }
 
 export default ResultList;
+
+
+
+
+// id, title, authors, description, listPrice

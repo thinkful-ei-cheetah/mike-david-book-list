@@ -1,15 +1,23 @@
 import React, { Component } from 'react';
 import './App.css';
-import FilterSearch from '.FilterSearch/.FilterSearch';
-import ResultList from '.List/.ResultList';
+// import FilterSearch from './FilterSearch/FilterSearch';
+import ResultList from './List/ResultList';
 
 class App extends Component {
   state = {
-    books: []
+    books: [],
+    searchTerm: '',
+    searching: false,
+  }
+
+  updateSearchTerm(term){
+    this.setState({
+      searchTerm: term
+    })
   }
 
   componentDidMount() {
-    const url = `https://www.googleapis.com/books/v1/volumes?q=${USER-INPUT}+inauthor:keyes&key=AIzaSyC6R0xVVEABBqZuTLIChXn67svSgmDZikI`;
+    const url = `https://www.googleapis.com/books/v1/volumes?q=game+inauthor:keyes&key=AIzaSyC6R0xVVEABBqZuTLIChXn67svSgmDZikI`;
     const options = {
       method: 'GET',
       headers: {
@@ -45,7 +53,7 @@ class App extends Component {
         <header>
           Google Book Search
       </header>
-        <FilterSearch />
+        {/* <FilterSearch /> */}
         <ResultList />
         SOMETHING
       </div>
