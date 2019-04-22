@@ -1,21 +1,17 @@
 import React, { Component } from 'react';
 
 class SearchBar extends Component {
-  state = {
-    searchTerm: ''
-  }
 
-  submit = (e) => {
-    e.preventDefault();
-    this.props.handleSearch(this.state.searchTerm);
-    this.setState({searchTerm: ''});
-  }
-  
   render() {
     return (
-      <form className="search-bar" onSubmit={(e) => {this.submit(e)}}>
+      <form className="search-bar"
+       onSubmit={(e) => {
+         e.preventDefault();
+         this.props.handleSearch(e.target.searchInput.value)
+        }}
+      >
         <label htmlFor="search">Search</label>
-        <input type="text" id="search" onSubmit={e => this.setState({searchTerm: e.target.value})} />
+        <input type="text" id="search" name="searchInput" />
         <button type="submit" className="search-button">Search</button>
       </form>
     )

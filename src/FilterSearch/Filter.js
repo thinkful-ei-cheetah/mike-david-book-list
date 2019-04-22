@@ -5,7 +5,10 @@ class Filter extends Component {
     return (
       <div>
         <label htmlFor="book-type">Book Type: </label>
-        <select id="book-type" className="book-type" onChange={() => {}}>
+        <select
+         id="book-type" 
+         className="book-type" 
+          onChange={e => this.props.handleSearch(this.props.searchTerm, this.props.printType, e.target.value)}>
           <option value="ebooks">ebooks</option>
           <option value="free-ebooks">Free ebooks</option>
           <option value="full">Full</option>
